@@ -65,3 +65,172 @@ The project includes a test scenario where profiles are inserted, searched, modi
 **Conclusion:**
 FriendsBook demonstrates the effective use of hash tables and OOP principles to manage user data efficiently. The project highlights the ability to handle dynamic data, ensure data integrity, and implement efficient algorithms for common operations. It is an excellent example of applying theoretical concepts to a practical problem, making it a valuable addition to a portfolio or resume.
 
+
+**How to run:**
+To build and run the FriendsBook project, follow these steps:
+
+1. Open a terminal and navigate to the directory containing all project files.
+
+2. Clean any previous build artifacts by running:
+
+   ```
+   make clean
+   ```
+
+   **Expected Output:**
+
+   ```
+   rm -f fb td *.o
+   ```
+
+3. Build the project by running:
+
+   ```
+   make all
+   ```
+
+   **Expected Output:**
+
+   ```
+   g++ -Wall -c FriendsBook.cpp
+   g++ -Wall -c MyADT.cpp
+   g++ -Wall -c Profile.cpp
+   g++ -Wall -o fb FriendsBook.o MyADT.o Profile.o
+   g++ -Wall -c MyADTTestDriver.cpp
+   g++ -Wall -o td MyADTTestDriver.o MyADT.o Profile.o
+   ```
+
+
+4. Run the main application:
+```
+./fb
+````
+
+**Expected Output:**
+
+```
+
+----Welcome to FriendsBook!
+
+
+Enter ...
+j -> to join FriendsBook by creating a profile.
+l -> to leave FriendsBook.
+s -> to search for a friend on FriendsBook.
+m -> to modify your profile on FriendsBook.
+p -> to print all members on FriendsBook.
+x -> to exit FriendsBook.
+
+Your choice: x
+
+
+----Bye!
+
+```
+
+5. Run the test driver to validate functionality:
+   ```
+   ./td
+   ```
+   **Expected Output:**
+```
+Current Collection:
+abcreally, Xiao Wong, xw123@coldmail.com, born on August 2 2003
+ihatethis!, Louis Pace, louis@nowhere.com, born on May 25 2001
+marieLower, Marie Lower, marie@somewhere.ca, born on July 21 1999
+mrvropdgs56, Arwinder Singh, meow@telthem.com, born on December 17 1998
+Total Number of Elements: 4
+-------------------
+
+Inserting additional profiles into the collection...
+Current Collection:
+abcreally, Xiao Wong, xw123@coldmail.com, born on August 2 2003
+harry, HARRY SINGH, harry@gmail.com, born on 19-10-2003
+ihatethis!, Louis Pace, louis@nowhere.com, born on May 25 2001
+marieLower, Marie Lower, marie@somewhere.ca, born on July 21 1999
+mrvropdgs56, Arwinder Singh, meow@telthem.com, born on December 17 1998
+nidhish, Nidhish Singh, nidhidh@hotmail.com, born on 02-09-2003
+vansh, VANSH BANSAL, vansh@.com, born on 01-09-2002
+Total Number of Elements: 7
+-------------------
+Testing Default Constructor...
+Default Constructor tested.
+Current Collection:
+Total Number of Elements: 0
+-------------------
+
+Searching for 'marieLower'...
+Profile found: marieLower, Marie Lower, marie@somewhere.ca, born on July 21 1999
+
+
+Removing 'marieLower' from the collection...
+Profile removed successfully.
+Current Collection:
+abcreally, Xiao Wong, xw123@coldmail.com, born on August 2 2003
+harry, HARRY SINGH, harry@gmail.com, born on 19-10-2003
+ihatethis!, Louis Pace, louis@nowhere.com, born on May 25 2001
+mrvropdgs56, Arwinder Singh, meow@telthem.com, born on December 17 1998
+nidhish, Nidhish Singh, nidhidh@hotmail.com, born on 02-09-2003
+vansh, VANSH BANSAL, vansh@.com, born on 01-09-2002
+Total Number of Elements: 6
+-------------------
+
+Removing all profiles from the collection...
+Current Collection:
+Total Number of Elements: 0
+-------------------
+
+Hypothetical Test for Shallow Copy...
+Original Collection (would show 'shallowCopyUser' in a true shallow copy scenario):
+Current Collection:
+shallowCopyUser, Shallow User, shallow@user.com, born on 12/12/2012
+Total Number of Elements: 1
+-------------------
+Hypothetical Shallow Copied Collection (should include 'shallowCopyUser'):
+Current Collection:
+shallowCopyUser, Shallow User, shallow@user.com, born on 12/12/2012
+Total Number of Elements: 1
+-------------------
+
+Removing 'harry' from the shallow copy collection...
+Profile not found for removal in shallow copy.
+Current Collection:
+shallowCopyUser, Shallow User, shallow@user.com, born on 12/12/2012
+Total Number of Elements: 1
+-------------------
+
+Removing 'harry' from the original collection...
+Profile not found for removal in the original collection.
+Current Collection:
+shallowCopyUser, Shallow User, shallow@user.com, born on 12/12/2012
+Total Number of Elements: 1
+-------------------
+
+Removing all profiles from the shallow copy collection...
+Current Collection:
+Total Number of Elements: 0
+-------------------
+
+Removing all profiles from the original collection...
+Current Collection:
+Total Number of Elements: 0
+-------------------
+
+Testing Deep Copy...
+Original Collection (should not include 'deepCopyUser'):
+Current Collection:
+Total Number of Elements: 0
+-------------------
+Deep Copied Collection (should include 'deepCopyUser'):
+Current Collection:
+tbd, tbd, tbd, born on tbd
+tbd, tbd, tbd, born on tbd
+tbd, tbd, tbd, born on tbd
+tbd, tbd, tbd, born on tbd
+tbd, tbd, tbd, born on tbd
+Segmentation fault (core dumped)
+
+```
+
+
+
